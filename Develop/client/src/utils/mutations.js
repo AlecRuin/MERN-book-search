@@ -9,3 +9,35 @@ mutation CreateUser($username:String!,$email:String!,$password:String!){
     }
   }
 `
+export const SAVE_BOOK = gql`
+  mutation saveBook($token:String!,$description:String!, $bookId:String!, $title:String!, $authors:[String],$link:String,$image:String){
+    saveBook(token:$token,description:$description,bookId:$bookId,title:$title,authors:$authors,link:$link,image:$image){
+      _id
+      username
+      savedBooks{
+        authors
+        description
+        bookId
+        link
+        image
+        title
+      }
+    }
+  }
+`
+export const REMOVE_BOOK = gql`
+  mutation removeBook($token:String!,$bookId:String!){
+    removeBook(token:$token,bookId:$bookId){
+      _id
+      username
+      savedBooks{
+        authors
+        description
+        bookId
+        link
+        image
+        title
+      }
+    }
+  }
+`

@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AlecRuin.github.io/MERN-book-search",
+  "homepage": "https://AlecRuin.github.io/MERN-Book-Search",
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@apollo/client": "^3.3.5",
@@ -10,7 +10,6 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.4.1",
-    "gh-pages": "^4.0.0",
     "jwt-decode": "^2.2.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
@@ -20,8 +19,8 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build",
-    "predeploy": "npm run build",
+    "deploy":"gh-pages -d build",
+    "predeploy":"npm run build",
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

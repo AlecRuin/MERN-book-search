@@ -6,17 +6,16 @@ const { signToken,authMiddleware } = require("../utils/auth");
 
 const resolvers={
     Query:{
-        user:async(parent,{token})=>{
+        me:async(parent,{token})=>{
             const user= authMiddleware(token)
             return await User.findById(user.id)
-        },
-        users:async(parent)=>{
-            return await User.find({})
         }
     },
     Mutation:{
-        createUser:async(parent,{username,email,password})=>{
-            return await User.create({username,email,password})
+        addUser:async(parent,{username,email,password})=>{
+            const user= User.create({username,email,password})
+            const token=signToken(user)
+            return {token,user}
         },
         login:async(parent,{email,password})=>{
             const user= await User.findOne({email})
@@ -37,10 +36,11 @@ const resolvers={
                 {new:true,runValidators:true}
             )
         },
-        deleteBook:async(parent,{user,body})=>{
+        removeBook:async(parent,{token,bookId})=>{
+            const user= authMiddleware(token)
             return await User.findOneAndUpdate(
                 { _id: user._id },
-                { $pull: { savedBooks: { bookId: body.bookId } } },
+                { $pull: { savedBooks: { bookId: bookId } } },
                 { new: true }
               )
         }
