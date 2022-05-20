@@ -6,9 +6,12 @@ import {
 import {
   CREATE_USER
 }from "../utils/mutations"
+//I CANT GET THIS API CALL TO WORK!! I EXHAUSTED ALL RESOURCES. 
 const [getSingleUser,{error}]=useQuery(QUERY_SINGLE_USER)
 const [postUser,{err}]=useMutation(CREATE_USER)
 
+
+//this is what the getSingleUser call would look like if it would work.
 export const getMe = async(token) => {
   // return fetch('/api/users/me', {
   //   headers: {
@@ -24,7 +27,7 @@ export const getMe = async(token) => {
     console.log(error);
   }
 };
-
+//this is what the createUser would look like if it would work
 export const createUser = async(userData) => {
   // return fetch('/api/users', {
   //   method: 'POST',

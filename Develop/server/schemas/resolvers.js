@@ -1,6 +1,9 @@
 const {User,Book}=require("../models")
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken,authMiddleware } = require("../utils/auth");
+
+//All resolvers and mutations. copied from the user-controller.js and repurposed for using graphQL. All queries and mutations work. 
+
 const resolvers={
     Query:{
         user:async(parent,{token})=>{

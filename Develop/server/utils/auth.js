@@ -4,10 +4,10 @@ const jwt = require('jsonwebtoken');
 const secret = 'mysecretsshhhhh';
 const expiration = '2h';
 
+
+//redesigned the auth to return the user data upon verifying the user. more general purpose than using req/res/next
 module.exports = {
-  // function for our authenticated routes
   authMiddleware: function (token) {
-    // verify token and get user data out of it
     try {
       const { data } = jwt.verify(token, secret, { maxAge: expiration });
       return data
@@ -18,7 +18,6 @@ module.exports = {
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
-
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },
 };

@@ -3,6 +3,11 @@ const { User } = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 
+
+//SINCE ROUTES HAS BEEN COMMENTED OUT, THIS CODE IS NO LONGER FUNCTIONAL. 
+//IT IS ONLY USED FOR REFERENCE
+
+
 module.exports = {
   // get a single user by either their id or their username
   async getSingleUser({ user = null, params }, res) {
