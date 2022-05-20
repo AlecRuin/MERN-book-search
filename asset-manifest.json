@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/MERN-book-search/static/css/main.a13d3d6a.chunk.css",
-    "main.js": "/MERN-book-search/static/js/main.2189f3e2.chunk.js",
-    "main.js.map": "/MERN-book-search/static/js/main.2189f3e2.chunk.js.map",
-    "runtime-main.js": "/MERN-book-search/static/js/runtime-main.34e0ef18.js",
-    "runtime-main.js.map": "/MERN-book-search/static/js/runtime-main.34e0ef18.js.map",
-    "static/css/2.69121389.chunk.css": "/MERN-book-search/static/css/2.69121389.chunk.css",
-    "static/js/2.de190500.chunk.js": "/MERN-book-search/static/js/2.de190500.chunk.js",
-    "static/js/2.de190500.chunk.js.map": "/MERN-book-search/static/js/2.de190500.chunk.js.map",
-    "index.html": "/MERN-book-search/index.html",
-    "precache-manifest.c895cd3b3fb6e751330307e3cade44d2.js": "/MERN-book-search/precache-manifest.c895cd3b3fb6e751330307e3cade44d2.js",
-    "service-worker.js": "/MERN-book-search/service-worker.js",
-    "static/css/2.69121389.chunk.css.map": "/MERN-book-search/static/css/2.69121389.chunk.css.map",
-    "static/css/main.a13d3d6a.chunk.css.map": "/MERN-book-search/static/css/main.a13d3d6a.chunk.css.map",
-    "static/js/2.de190500.chunk.js.LICENSE.txt": "/MERN-book-search/static/js/2.de190500.chunk.js.LICENSE.txt"
+    "main.css": "/MERN-Book-Search/static/css/main.a13d3d6a.chunk.css",
+    "main.js": "/MERN-Book-Search/static/js/main.8bdd3fa9.chunk.js",
+    "main.js.map": "/MERN-Book-Search/static/js/main.8bdd3fa9.chunk.js.map",
+    "runtime-main.js": "/MERN-Book-Search/static/js/runtime-main.f0158eb4.js",
+    "runtime-main.js.map": "/MERN-Book-Search/static/js/runtime-main.f0158eb4.js.map",
+    "static/css/2.69121389.chunk.css": "/MERN-Book-Search/static/css/2.69121389.chunk.css",
+    "static/js/2.71cc9197.chunk.js": "/MERN-Book-Search/static/js/2.71cc9197.chunk.js",
+    "static/js/2.71cc9197.chunk.js.map": "/MERN-Book-Search/static/js/2.71cc9197.chunk.js.map",
+    "index.html": "/MERN-Book-Search/index.html",
+    "precache-manifest.9928475f1eb70590cddfed6d197ca553.js": "/MERN-Book-Search/precache-manifest.9928475f1eb70590cddfed6d197ca553.js",
+    "service-worker.js": "/MERN-Book-Search/service-worker.js",
+    "static/css/2.69121389.chunk.css.map": "/MERN-Book-Search/static/css/2.69121389.chunk.css.map",
+    "static/css/main.a13d3d6a.chunk.css.map": "/MERN-Book-Search/static/css/main.a13d3d6a.chunk.css.map",
+    "static/js/2.71cc9197.chunk.js.LICENSE.txt": "/MERN-Book-Search/static/js/2.71cc9197.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.34e0ef18.js",
+    "static/js/runtime-main.f0158eb4.js",
     "static/css/2.69121389.chunk.css",
-    "static/js/2.de190500.chunk.js",
+    "static/js/2.71cc9197.chunk.js",
     "static/css/main.a13d3d6a.chunk.css",
-    "static/js/main.2189f3e2.chunk.js"
+    "static/js/main.8bdd3fa9.chunk.js"
   ]
 }
