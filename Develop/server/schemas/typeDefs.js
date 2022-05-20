@@ -14,7 +14,7 @@ type User{
     username: String
     email: String
     password: String
-    savedBooks: __Schema
+    savedBooks: [Book]
 }
 type Query {
     books: [Book]
