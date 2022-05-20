@@ -29,10 +29,11 @@ const resolvers={
             const token = signToken(user)
             return {token, user}
         },
-        saveBook:async(parent,{user,body})=>{
+        saveBook:async(parent,{token,description,bookId,title,authors,link,image})=>{
+            const user= authMiddleware(token)
             return User.findOneAndUpdate(
                 {_id:user.id},
-                {$addToSet:{savedBooks:body}},
+                {$addToSet:{savedBooks:{description,bookId,title,authors,link,image}}},
                 {new:true,runValidators:true}
             )
         },

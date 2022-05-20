@@ -66,14 +66,29 @@ const SearchBooks = () => {
     if (!token) {
       return false;
     }
-
     try {
-      const response = await saveBook(token,{bookToSave});
-
-      if (!response.ok) {
-        throw new Error('something went wrong!');
+      console.log(bookToSave);
+      const payload = {
+        token:token,
+        description:bookToSave.description,
+        bookId:bookToSave.bookId,
+        title:bookToSave.title,
+        authors:bookToSave.authors,
+        link:bookToSave.link,
+        image:bookToSave.image
+    }
+      console.log("payload:",payload);
+      const response = await saveBook({
+        variables:{
+          token:token,
+          description:bookToSave.description,
+          bookId:bookToSave.bookId,
+          title:bookToSave.title,
+          authors:bookToSave.authors,
+          link:bookToSave.link,
+          image:bookToSave.image
       }
-
+      });
       // if book successfully saves to user's account, save book id to state
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
