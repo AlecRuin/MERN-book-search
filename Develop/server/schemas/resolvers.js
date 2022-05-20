@@ -1,9 +1,11 @@
 const {User,Book}=require("../models")
 const { AuthenticationError } = require("apollo-server-express");
-const { signToken } = require("../utils/auth");
+const { signToken,authMiddleware } = require("../utils/auth");
 const resolvers={
     Query:{
-        user:async(parent,{id})=>{return await User.findById(id)
+        user:async(parent,{token})=>{
+            const user= authMiddleware(token)
+            return await User.findById(user.id)
         },
         users:async(parent)=>{
             return await User.find({})
@@ -31,6 +33,13 @@ const resolvers={
                 {$addToSet:{savedBooks:body}},
                 {new:true,runValidators:true}
             )
+        },
+        deleteBook:async(parent,{user,body})=>{
+            return await User.findOneAndUpdate(
+                { _id: user._id },
+                { $pull: { savedBooks: { bookId: body.bookId } } },
+                { new: true }
+              )
         }
     }
 }

@@ -1,21 +1,45 @@
 // route to get logged in user's info (needs the token)
-export const getMe = (token) => {
-  return fetch('/api/users/me', {
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${token}`,
-    },
-  });
+import {useMutation,useQuery} from "@apollo/client"
+import {
+  QUERY_SINGLE_USER
+} from '../utils/queries'
+import {
+  CREATE_USER
+}from "../utils/mutations"
+const [getSingleUser,{error}]=useQuery(QUERY_SINGLE_USER)
+const [postUser,{err}]=useMutation(CREATE_USER)
+
+export const getMe = async(token) => {
+  // return fetch('/api/users/me', {
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     authorization: `Bearer ${token}`,
+  //   },
+  // });
+  try {
+    return await getSingleUser({
+      variables:{id:token}
+    })
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const createUser = (userData) => {
-  return fetch('/api/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(userData),
-  });
+export const createUser = async(userData) => {
+  // return fetch('/api/users', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify(userData),
+  // });
+  try {
+    return await postUser({
+      variables:{userData}
+    })
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const loginUser = (userData) => {
